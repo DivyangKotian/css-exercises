@@ -5,10 +5,14 @@ html {
 }
 
 .container {
+  display: grid;
   text-align: center;
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
+  grid-template-columns: 300px 900px;                                             /*2nd col 3 times, 3rd row 5 times */
+  grid-template-rows: 100px 100px 500px 100px;
+  gap: 15px;                                                                      /* gutter gap 15px*/
 }
 
 .container div {
@@ -22,10 +26,12 @@ html {
 
 .header {
   background-color: #006157;
+  grid-column: 1/ -1;                                                           /* span across all cols in row 1*/
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-row: 2/ -2;                                                               /* 2nd row to 2nd last row */
 }
 
 .nav {
@@ -38,6 +44,8 @@ html {
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1/ -1;                                                           /* all cols, last row */
+  grid-row: 4;
 }
 
 .article p {
